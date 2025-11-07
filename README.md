@@ -9,4 +9,4 @@
 
 ---
 
-<small>Profile README inspired by <a href="https://simonwillison.net/2020/Jul/10/self-updating-profile-readme/">Simon Willison's self-updating guide</a></small>
+<small><a href="https://simonwillison.net/2020/Jul/10/self-updating-profile-readme/">How this works</a></small>
