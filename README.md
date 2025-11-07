@@ -3,7 +3,7 @@
 
 **Researching:**
 <!--START_SECTION:research-->
-* {Recent 5 posts from https://github.com/shrwnsan/research/}
+* No recent research posts
 <!--END_SECTION:research-->
 
 ---
