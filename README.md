@@ -1,5 +1,8 @@
 **WIP:**
-* **Search-Plus plugin for Claude Code** - Must-have for third-party model users. Eliminates search failures with 100% test success and multi-service fallback. [Easy install here](https://github.com/shrwnsan/vibekit-claude-plugins/)
+* **Search-Plus plugin for Claude Code**
+  * Must-have for third-party model users. Eliminates search failures with 100% test success and multi-service fallback. [Easy install here](https://github.com/shrwnsan/vibekit-claude-plugins/)
+* **Dev Flow — Gemini CLI Extension**
+  * Structured AI development workflows in your terminal. Plan → Design → Build with smart task management and Git integration. [Get the extension](https://github.com/shrwnsan/clix-dev-flow)
 
 **Researching:**
 <!--START_SECTION:research-->
