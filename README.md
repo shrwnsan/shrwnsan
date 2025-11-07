@@ -9,4 +9,12 @@
 
 ---
 
+<table><tr><td>
+
 <small><a href="https://simonwillison.net/2020/Jul/10/self-updating-profile-readme/">How this works</a></small>
+
+</td><td align="right">
+
+[![Build README](https://github.com/shrwnsan/shrwnsan/actions/workflows/update-readme.yml/badge.svg)](https://github.com/shrwnsan/shrwnsan/actions)
+
+</td></tr></table>
