@@ -2,14 +2,30 @@
 import os
 import re
 import requests
+import feedparser
 from pathlib import Path
 
 def get_research_posts():
-    """Fetch recent posts from research repository"""
-    url = "https://api.github.com/repos/shrwnsan/research/issues"
-    params = {"state": "open", "sort": "created", "direction": "desc", "per_page": 5}
-    response = requests.get(url, params=params)
-    return response.json() if response.status_code == 200 else []
+    """Fetch recent Jekyll posts from research blog using Atom feed"""
+    feed_url = "https://shrwnsan.github.io/research/feed.xml"
+
+    try:
+        feed = feedparser.parse(feed_url)
+        entries = feed["entries"][:5]  # Get only 5 most recent
+
+        posts = []
+        for entry in entries:
+            posts.append({
+                "title": entry["title"],
+                "url": entry["link"].split("#")[0],  # Remove anchor if present
+                "published": entry["published"].split("T")[0] if entry.get("published") else ""
+            })
+
+        return posts
+
+    except Exception as e:
+        print(f"Error fetching research feed: {e}")
+        return []
 
 def format_research_posts(posts):
     """Format research posts as markdown"""
@@ -19,8 +35,13 @@ def format_research_posts(posts):
     formatted = []
     for post in posts[:5]:
         title = post.get('title', 'Untitled')
-        url = post.get('html_url', '#')
-        formatted.append(f"* [{title}]({url})")
+        url = post.get('url', '#')
+        published = post.get('published', '')
+
+        if published:
+            formatted.append(f"* [{title}]({url}) - {published}")
+        else:
+            formatted.append(f"* [{title}]({url})")
 
     return "\n".join(formatted)
 
