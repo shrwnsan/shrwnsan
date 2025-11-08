@@ -6,8 +6,8 @@
 
 **Researching:**
 <!--START_SECTION:research-->
-* [Conductor - Comprehensive Analysis &amp; Review](https://shrwnsan.github.io/research/2025/11/06/conductor-analysis/) - 2025-11-06
-* [Agentic Augmentation: A New Paradigm for AI-Human Collaboration](https://shrwnsan.github.io/research/2025/11/05/first-research-post/) - 2025-11-05
+* [Conductor - Comprehensive Analysis &amp; Review](https://shrwnsan.github.io/research/ai-conductor-analysis/) - 2025-11-06
+* [Agentic Augmentation: A New Paradigm for AI-Human Collaboration](https://shrwnsan.github.io/research/ai-human-collaboration/) - 2025-11-05
 <!--END_SECTION:research-->
 
 ---
