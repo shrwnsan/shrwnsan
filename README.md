@@ -6,6 +6,7 @@
 
 **Researching:**
 <!--START_SECTION:research-->
+* [From Cockpit to Conversation: How Smart Model Selection is the Future of AI Tools](https://shrwnsan.github.io/research/smart-model-selection-future-ai-tools/) - 2025-11-16
 * [Conductor - Comprehensive Analysis &amp; Review](https://shrwnsan.github.io/research/ai-conductor-analysis/) - 2025-11-06
 * [Agentic Augmentation: A New Paradigm for AI-Human Collaboration](https://shrwnsan.github.io/research/ai-human-collaboration/) - 2025-11-05
 <!--END_SECTION:research-->
