@@ -1,4 +1,8 @@
-**WIP:**
+**#buildinpublic**
+* **brew-change**
+  * See what's changing before you `brew upgrade`. Get release notes, changelogs, and version details for outdated packages. [Get it here](https://github.com/shrwnsan/brew-change)
+* **claude-statusline — Simple statusline for Claude Code**
+  * Just the essentials, none of the bloat. ~5ms runtime with bun (5x faster than Node). [Learn more here](https://github.com/shrwnsan/claude-statusline)
 * **Search-Plus plugin for Claude Code**
   * Must-have for third-party model users. Eliminates search failures with 100% test success and multi-service fallback. [Easy install here](https://github.com/shrwnsan/vibekit-claude-plugins/)
 * **Dev Flow — Gemini CLI Extension**
