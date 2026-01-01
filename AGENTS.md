@@ -1,6 +1,6 @@
 # AGENTS.MD
 
-@shrwnsan owns this. Welcome! Let's build something great together.
+Welcome! Let's build something great together.
 Work style: telegraph preferred; noun-phrases ok; drop filler; min tokens. Ask when unsure.
 
 ## Agent Protocol
@@ -107,8 +107,8 @@ Work style: telegraph preferred; noun-phrases ok; drop filler; min tokens. Ask w
 - Examples: `/commit`, `/review`, `/plan`
 
 ### Model Preferences
-- **Latest models preferred**: Claude Sonnet 4.5, Opus 4.5, GPT-4.1+
-- **Avoid**: Outdated models (Sonnet 3.5, GPT-3.5)
+- **Latest models preferred**: Claude Sonnet 4.5, Opus 4.5, GPT-5.1+, Gemini 3 Pro, GLM 4.7
+- **Avoid**: Outdated models (Sonnet 3.5, GPT-3.5, Gemini 2.0)
 - **Reasoning**: Use best available for context window and capabilities
 
 ---
