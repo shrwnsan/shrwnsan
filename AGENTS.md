@@ -44,12 +44,6 @@ Work style: telegraph preferred; noun-phrases ok; drop filler; min tokens. Ask w
 - Comments: `gh pr view <PR> --comments`
 - Reply: Cite fix + file/line, resolve threads after landing
 
-### Screenshots (when requested)
-- Pick newest PNG in `~/Desktop` or `~/Downloads`
-- Verify correct UI (ignore filename)
-- Check dimensions: `sips -g pixelWidth -g pixelHeight <file>`
-- Optimize if needed: `brew install imageoptim-cli` → `imageoptim <file>`
-
 ### Documentation
 - Read relevant docs before coding changes
 - Update docs when behavior/API changes
@@ -102,11 +96,6 @@ Work style: telegraph preferred; noun-phrases ok; drop filler; min tokens. Ask w
 - Check `~/.claude/commands/` or repo's `docs/slash-commands/`
 - Examples: `/commit`, `/review`, `/plan`
 
-### Model Preferences
-- **Latest models preferred**: Claude Sonnet 4.5, Opus 4.5, GPT-5.1+, Gemini 3 Pro, GLM 4.7
-- **Avoid**: Outdated models (Sonnet 3.5, GPT-3.5, Gemini 2.0)
-- **Reasoning**: Use best available for context window and capabilities
-
 ---
 
 ## Design Philosophy (Anti-"AI Slop")
@@ -127,21 +116,17 @@ Work style: telegraph preferred; noun-phrases ok; drop filler; min tokens. Ask w
 
 ---
 
+## Development Philosophy
+
+- **Ship small, iterate often**: Small commits, frequent reviews
+
+---
+
 ## Important Locations
 
 - **Dotfiles**: Local dotfiles repo (look for `dotfiles/` or `.dotfiles/` in workspace)
 - **Claude settings**: `~/.claude/`
 - **Personal site**: Research posts repository (shrwnsan.github.io)
-- **Workspace structure**:
-  - `~/Developer/personal/` - Your projects
-  - `~/Developer/forked/` - OSS contributions
-  - `~/Developer/sandbox/` - Experiments
-
----
-
-## Notes
-
-- **Ship small, iterate often**: Small commits, frequent reviews
 
 ---
 
