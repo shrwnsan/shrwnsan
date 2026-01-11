@@ -22,6 +22,12 @@ Work style: telegraph preferred; noun-phrases ok; drop filler; min tokens. Ask w
 - **Create**: Only when necessary; prefer editing existing files
 - **Max file size**: Aim for <500 LOC; split when needed
 
+### Security
+- **Secrets files**: NEVER read or display contents of (.env, .env.*, *.key, *.pem, credentials.json, .aws/credentials, etc.)
+- **Sensitive data**: If encountering API keys, tokens, or secrets in code, report presence generically without exposing values
+- **Git security**: Never commit secrets files; use `git status --ignored` to check for .env before committing
+- **Code review**: Flag hardcoded secrets, missing .gitignore entries for secrets files
+
 ### Git Workflow
 - **Commits**: Conventional Commits format `type(scope): description` (types: feat, fix, refactor, docs, chore, test, ci)
 - **AI co-authorship** (commits): Include appropriate attribution based on model used:
