@@ -98,6 +98,24 @@ Work style: telegraph preferred; noun-phrases ok; drop filler; min tokens. Ask w
 - List project docs before coding
 - Built from `bin/docs-list` or `scripts/docs-list.ts`
 
+### Browser Automation
+
+If available, use `agent-browser` for web automation. Run `agent-browser --help` for all commands.
+
+Core workflow:
+1. `agent-browser open <url>` - Navigate to page
+2. `agent-browser snapshot -i` - Get interactive elements with refs (@e1, @e2)
+3. `agent-browser click @e1` / `fill @e2 "text"` - Interact using refs
+4. Re-snapshot after page changes
+
+Not installed? Run:
+```bash
+npm install -g agent-browser
+agent-browser install
+```
+
+Learn more via Vercel Labs: https://github.com/vercel-labs/agent-browser
+
 ### Slash Commands (if using Claude Code)
 - Check `~/.claude/commands/` or repo's `docs/slash-commands/`
 - Examples: `/commit`, `/review`, `/plan`
