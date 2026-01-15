@@ -33,6 +33,7 @@ Work style: telegraph preferred; noun-phrases ok; drop filler; min tokens. Ask w
 - **AI co-authorship** (commits): Include appropriate attribution based on model used:
   - GLM: `Co-Authored-By: GLM <zai-org@users.noreply.github.com>`
   - Claude: `Co-Authored-By: Claude <noreply@anthropic.com>`
+  - OpenCode: `Co-Authored-By: OpenCode <noreply@opencode.ai>` (multi-model tool; uses faster/cheaper models for routine tasks)
   - Other: Match model's attribution format
 - **Push**: Only when explicitly requested
 - **Branch changes**: Ask for consent first
