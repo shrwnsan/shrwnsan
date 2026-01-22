@@ -40,6 +40,7 @@ Work style: telegraph preferred; noun-phrases ok; drop filler; min tokens. Ask w
 - **Destructive ops**: Forbidden unless explicit (`reset --hard`, `clean`, `rebase`)
 - **Review**: Use `gh pr view/diff` (no URLs)
 - **Amend**: Only when requested
+- **Sensitive files in dotfiles**: Use `git update-index --assume-unchanged <file>` for tracked files with local secrets (e.g., `npm/.npmrc` with auth tokens)
 
 ### CI & Quality Gates
 - Before handoff: Run lint, typecheck, tests
