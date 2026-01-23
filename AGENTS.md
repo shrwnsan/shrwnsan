@@ -53,9 +53,27 @@ Work style: telegraph preferred; noun-phrases ok; drop filler; min tokens. Ask w
 - Reply: Cite fix + file/line, resolve threads after landing
 
 ### Documentation
-- Read relevant docs before coding changes
-- Update docs when behavior/API changes
-- Keep docs accurate and concise
+
+**File Naming Convention**: `prefix-{n}-{title}.md` (n = 3-digit incrementing integer)
+
+| Prefix | Purpose | Phase | Example |
+|--------|---------|-------|---------|
+| `research-` | Exploratory investigation | Before decisions | `research-001-auth-providers.md` |
+| `eval-` | Assessment & recommendations | Decision-making | `eval-001-auth-providers.md` |
+| `prd-` | Product Requirements Documents | Planning | `prd-001-oauth-integration.md` |
+| `adr-` | Architectural Decision Records | Throughout | `adr-001-use-auth0.md` |
+| `tasks-` | Task breakdowns | Implementation | `tasks-001-prd-001.md` |
+| `guide-` | How-to guides, tutorials | Reference | `guide-001-adding-auth.md` |
+| `retro-` | Situational retrospectives | Post-milestone | `retro-001-v1-launch.md` |
+
+**Special case**: `tasks-{m}-prd-{n}.md` references parent PRD number (m, n = independent sequences)
+
+**`retro-` use cases** (situational): Major milestones, architectural pivots, incident post-mortems
+
+**Timeline flow**: `research-` → `eval-` → `prd-` / `adr-` → `tasks-` → `guide-` → `retro-` (as needed)
+
+**Docs before code**: Read relevant docs before coding changes
+**Update on change**: Update docs when behavior/API changes
 
 ### Code Style
 - **TypeScript/JavaScript**: Use existing patterns in repo
