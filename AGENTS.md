@@ -105,36 +105,14 @@ Work style: telegraph preferred; noun-phrases ok; drop filler; min tokens. Ask w
 - Keep commits small and reviewable
 
 ### Tools Reference
-
-#### GitHub CLI (`gh`)
-- PRs: `gh pr view`, `gh pr diff`
-- Issues: `gh issue view <number> --comments`
-- CI: `gh run list`, `gh run view <run-id>`
-
-#### `trash`
-- Safe delete: `trash <file_or_dir>`
-
-#### `docs:list` (if available)
-- List project docs before coding
-- Built from `bin/docs-list` or `scripts/docs-list.ts`
+- `gh`: PRs (`gh pr view/diff`), Issues (`gh issue view <#> --comments`), CI (`gh run list/view`)
+- `trash`: Safe delete (`trash <file_or_dir>`)
+- `docs:list`: List project docs (built from `bin/docs-list` or `scripts/docs-list.ts`)
 
 ### Browser Automation
-
-If available, use `agent-browser` for web automation. Run `agent-browser --help` for all commands.
-
-Core workflow:
-1. `agent-browser open <url>` - Navigate to page
-2. `agent-browser snapshot -i` - Get interactive elements with refs (@e1, @e2)
-3. `agent-browser click @e1` / `fill @e2 "text"` - Interact using refs
-4. Re-snapshot after page changes
-
-Not installed? Run:
-```bash
-npm install -g agent-browser
-agent-browser install
-```
-
-Learn more via Vercel Labs: https://github.com/vercel-labs/agent-browser
+Use `agent-browser` for web automation. Install: `npm install -g agent-browser && agent-browser install`
+Workflow: open <url> → snapshot -i → click @e1, or fill @e2 "text" → re-snapshot
+Workflow details: https://github.com/vercel-labs/agent-browser#agentsmd--claudemd
 
 ### Slash Commands (if using Claude Code)
 - Check `~/.claude/commands/` or repo's `docs/slash-commands/`
