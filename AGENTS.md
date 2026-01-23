@@ -58,8 +58,8 @@ Work style: telegraph preferred; noun-phrases ok; drop filler; min tokens. Ask w
 
 | Prefix | Purpose | Phase | Example |
 |--------|---------|-------|---------|
-| `research-` | Exploratory investigation | Before decisions | `research-001-auth-providers.md` |
-| `eval-` | Assessment & recommendations | Decision-making | `eval-001-auth-providers.md` |
+| `research-` | Information gathering, option discovery | Exploration (pre-decision) | `research-001-auth-providers.md` |
+| `eval-` | Comparative analysis, recommendation | Decision-making | `eval-001-auth-providers.md` |
 | `prd-` | Product Requirements Documents | Planning | `prd-001-oauth-integration.md` |
 | `adr-` | Architectural Decision Records | Throughout | `adr-001-use-auth0.md` |
 | `tasks-` | Task breakdowns | Implementation | `tasks-001-prd-001.md` |
