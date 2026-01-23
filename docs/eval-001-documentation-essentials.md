@@ -45,10 +45,20 @@ Source: https://diataxis.fr/
 ### Supporting (Context-Specific)
 - `prd-` - Product Requirements Documents
 - `rfc-` - Requests for Comments (proposals)
-- `research-` - Research findings
-- `retro-` - Retrospectives
-- `eval-` - Evaluations
+- `research-` - Exploratory investigation before decisions
+- `eval-` - Assessment of options for decision-making
+- `retro-` - Reflection after completion (post-mortem)
 - `tasks-` - Task breakdowns
+
+**Distinction: research- vs eval- vs retro-**
+
+| Prefix | Phase | Purpose | Example |
+|--------|-------|---------|---------|
+| `research-` | Before | Learning, gathering options | Comparing auth providers |
+| `eval-` | During | Scoring alternatives, trade-offs | Recommendation matrix |
+| `retro-` | After | Lessons learned, what worked | Sprint post-mortem |
+
+**Timeline flow**: `research-` → `eval-` → `decision` → `implementation` → `retro-`
 
 ## ADR Pattern
 
