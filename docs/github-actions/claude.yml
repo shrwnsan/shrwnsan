@@ -1,0 +1,128 @@
+name: Claude Code Assistant
+
+on:
+  # PR triggers
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+  pull_request_review:
+    types: [submitted]
+
+  # Issue triggers
+  issues:
+    types: [opened, assigned]
+
+jobs:
+  # ============================================================
+  # PR Code Review with Triage (triggered by @claude in PR)
+  # ============================================================
+  pr-review:
+    if: |
+      (github.event.issue.pull_request && 
+       github.event_name == 'issue_comment' && 
+       contains(github.event.comment.body, '@claude')) ||
+      (github.event_name == 'pull_request_review_comment' && 
+       contains(github.event.comment.body, '@claude')) ||
+      (github.event_name == 'pull_request_review' && 
+       contains(github.event.review.body, '@claude'))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+      actions: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Run Claude PR Review with Triage
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          trigger_phrase: "@claude"
+          track_progress: true
+          prompt: |
+            You are reviewing PR #${{ github.event.issue.number || github.event.pull_request.number }} 
+            in ${{ github.repository }}.
+            
+            ## Review Instructions
+            
+            1. **Analyze all changes** in this PR thoroughly
+            2. **Triage findings into categories:**
+            
+            ### 🚨 CRITICAL (Pre-merge blockers)
+            Issues that MUST be fixed before merging:
+            - Security vulnerabilities
+            - Breaking changes without migration path
+            - Data loss risks
+            - Critical bugs that would affect production
+            - Missing error handling for critical paths
+            
+            ### ⚠️ MEDIUM (Post-merge acceptable)
+            Issues that should be tracked but can be addressed post-merge:
+            - Performance improvements
+            - Code refactoring suggestions
+            - Missing non-critical tests
+            - Documentation gaps
+            
+            ### 💡 MINOR/NITS (Optional improvements)
+            Style and preference suggestions:
+            - Code style preferences
+            - Naming suggestions
+            - Minor optimizations
+            
+            ## Output Format
+            
+            Post your review as a PR comment with:
+            1. **Summary**: Brief overview of the changes
+            2. **Recommendation**: APPROVE, REQUEST_CHANGES, or COMMENT
+            3. **Critical Findings**: List each critical issue with file/line references
+            
+            If there are MEDIUM or MINOR findings, create a NEW GitHub Issue titled:
+            "[Post-merge] Follow-up tasks for PR #${{ github.event.issue.number || github.event.pull_request.number }}"
+            with all non-critical findings organized by category.
+            
+            Use inline comments for specific code feedback where appropriate.
+
+          claude_args: |
+            --max-turns 15
+            --allowedTools "Read,Bash(gh pr comment:*),Bash(gh pr review:*),Bash(gh issue create:*),mcp__github_inline_comment__create_inline_comment"
+
+  # ============================================================
+  # Issue Handler (triggered by @claude in Issues)
+  # ============================================================
+  issue-handler:
+    if: |
+      (!github.event.issue.pull_request && 
+       github.event_name == 'issue_comment' && 
+       contains(github.event.comment.body, '@claude')) ||
+      (github.event_name == 'issues' && 
+       (contains(github.event.issue.body, '@claude') || 
+        contains(github.event.issue.title, '@claude')))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+      actions: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Run Claude on Issue
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          trigger_phrase: "@claude"
+          # Claude auto-detects issue context and can:
+          # - Answer questions about code/architecture
+          # - Implement features and create PRs
+          # - Debug and fix issues
+          # - Provide code explanations
