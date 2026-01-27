@@ -41,8 +41,10 @@ jobs:
 
       - name: Run Claude PR Review with Triage
         uses: anthropics/claude-code-action@v1
+        env:
+          ANTHROPIC_BASE_URL: https://api.z.ai/api/anthropic  # 3rd party inference provider
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          anthropic_api_key: ${{ secrets.CLAUDE_ZAI_API_KEY }}
           trigger_phrase: "@claude"
           track_progress: true
           prompt: |
@@ -118,8 +120,10 @@ jobs:
 
       - name: Run Claude on Issue
         uses: anthropics/claude-code-action@v1
+        env:
+          ANTHROPIC_BASE_URL: https://api.z.ai/api/anthropic  # 3rd party inference provider
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          anthropic_api_key: ${{ secrets.CLAUDE_ZAI_API_KEY }}
           trigger_phrase: "@claude"
           # Claude auto-detects issue context and can:
           # - Answer questions about code/architecture
