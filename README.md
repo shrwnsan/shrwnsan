@@ -10,6 +10,7 @@
 
 **Researching:**
 <!--START_SECTION:research-->
+* [The Death of Maintenance: How AI Is Rewriting Regression Testing in 2026](https://shrwnsan.github.io/research/regression-testing-ai-sdlc/) - 2026-01-29
 * [Agent Skills as an Infrastructure Primitive](https://shrwnsan.github.io/research/agent-skills-infrastructure-primitive/) - 2025-12-26
 * [From Cockpit to Conversation: How Smart Model Selection is the Future of AI Tools](https://shrwnsan.github.io/research/smart-model-selection-future-ai-tools/) - 2025-11-16
 * [Conductor - Comprehensive Analysis &amp; Review](https://shrwnsan.github.io/research/ai-conductor-analysis/) - 2025-11-06
