@@ -95,7 +95,11 @@ When I report a bug:
 1. Write a failing test that reproduces the issue
 2. Have subagents fix the implementation
 3. Verify with passing tests
-4. For complex scenarios (especially browser-based workflows), output a markdown test plan first to maintain reproducibility
+4. For complex scenarios (especially browser-based workflows), output a markdown test plan first to maintain reproducibility:
+   - Location: `./.agents/debug/`
+   - Filename: `test-plan-{YYYYMMDD-HHMM}-{brief}.md` (e.g., `test-plan-20260202-1430-login-flow.md`)
+   - {brief}: kebab-case, 2-4 words, descriptive of what's being tested (e.g., login-flow, auth-bug, browser-form-submit)
+   - Default: ephemeral, delete after resolving. Commit only for high-value scenarios (reference workflows, complex integrations)
 
 ### Tech Stack Notes
 
