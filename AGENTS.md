@@ -82,11 +82,20 @@ Work style: telegraph preferred; noun-phrases ok; drop filler; min tokens. Ask w
 - **Prefer**: Simple, direct solutions over clever ones
 
 ### Critical Thinking
-- Fix root causes, not symptoms. When I report a bug: start by writing a test that reproduces it, then have subagents fix and prove with passing tests. For complex scenarios, output a markdown test plan first to maintain reproducibility (especially useful for browser-based workflows).
+
+#### General Principles
+- Fix root causes, not symptoms
 - Unsure? Read more code, then ask with short options
 - Conflicts: Call them out, pick safer path
 - Unrecognized changes: Assume other agent/context, stay focused
 - Leave breadcrumbs in comments when helpful
+
+#### Test-Driven Bug Fixes
+When I report a bug:
+1. Write a failing test that reproduces the issue
+2. Have subagents fix the implementation
+3. Verify with passing tests
+4. For complex scenarios (especially browser-based workflows), output a markdown test plan first to maintain reproducibility
 
 ### Tech Stack Notes
 
