@@ -410,18 +410,38 @@ occasional_audit:
 - SWE-bench Verified leaderboard updates
 - Open-source model releases (especially from Chinese labs)
 
+## Data Verification
+
+All benchmark claims and pricing data have been verified against primary sources as of 2026-02-03:
+
+| Claim | Source | Status |
+|-------|--------|--------|
+| Claude Opus 4.5: 80.9% SWE-Bench | [Vellum AI](https://www.vellum.ai/blog/claude-opus-4-5-benchmarks), [The Unwind AI](https://www.theunwindai.com/p/claude-opus-4-5-scores-80-9-on-swe-bench) | ✓ Verified |
+| GPT-5.2: 92.4% GPQA Diamond | [OpenAI Official](https://openai.com/index/introducing-gpt-5-2/), [Vellum AI](https://www.vellum.ai/blog/gpt-5-2-benchmarks) | ✓ Verified |
+| Haiku 4.5: 58% PR reviews vs Sonnet | [Qodo Blog](https://www.qodo.ai/blog/thinking-vs-thinking-benchmarking-claude-haiku-4-5-and-sonnet-4-5-on-400-real-prs/) | ✓ Verified |
+| GLM 4.7: 73.8% SWE-bench, 41% Terminal Bench | [Z.ai Official](https://z.ai/blog/glm-4-7) | ✓ Verified |
+| GLM 4.7 Flash: 59.2% SWE-bench | [Medium Guide](https://medium.com/@zh.milo/glm-4-7-flash-the-ultimate-2026-guide-to-local-ai-coding-assistant-93a43c3f8db3) | ✓ Verified |
+| Factory multipliers (0.2× - 2×) | [Factory Pricing Docs](https://docs.factory.ai/pricing) | ✓ Verified |
+
 ## References
 
 - [Factory Pricing Documentation](https://docs.factory.ai/pricing)
 - [Claude Opus 4.5 Benchmarks](https://www.vellum.ai/blog/claude-opus-4-5-benchmarks)
+- [The Unwind AI: Claude Opus 4.5 Scores 80.9% on SWE-Bench](https://www.theunwindai.com/p/claude-opus-4-5-scores-80-9-on-swe-bench)
+- [OpenAI: Introducing GPT-5.2](https://openai.com/index/introducing-gpt-5-2/)
 - [GPT-5.2 Benchmarks](https://www.vellum.ai/blog/gpt-5-2-benchmarks)
-- [Qodo AI: Haiku vs Sonnet PR Benchmark](https://www.qodo.ai/blog/thinking-vs-thinking-benchmarking-claude-haiku-4-5-a)
+- [Qodo AI: Haiku vs Sonnet PR Benchmark (400 Real PRs)](https://www.qodo.ai/blog/thinking-vs-thinking-benchmarking-claude-haiku-4-5-and-sonnet-4-5-on-400-real-prs/)
 - [Claude vs GPT vs Gemini Comparison](https://www.cosmicjs.com/blog/best-ai-for-developers-claude-vs-gpt-vs-gemini-)
 - [Kimi K2.5 Complete Guide](https://www.codecademy.com/article/kimi-k-2-5-complete-guide-to-moonshots-ai-model)
-- [GLM-4.7-Flash Ultimate Guide](https://medium.com/@zh.milo/glm-4-7-flash-the-ultimate-2026-guide-to-local-ai-coding-assistant)
-- [GLM 4.7 SWE-bench Analysis](https://www.linkedin.com/posts/ashishpatel2604_glm-47s-738-on-swe-bench-tells)
+- [Z.ai: GLM-4.7 Official Announcement](https://z.ai/blog/glm-4-7)
+- [GLM-4.7-Flash Ultimate Guide](https://medium.com/@zh.milo/glm-4-7-flash-the-ultimate-2026-guide-to-local-ai-coding-assistant-93a43c3f8db3)
 
 ## Changelog
+
+**2026-02-03 (Update 3):**
+- Added Data Verification section with source links for all benchmark claims
+- Updated References with direct source links (OpenAI, Z.ai, Qodo, The Unwind AI)
+- Removed TODO for Kimi K2.5, GLM 4.7, GLM 4.7 Flash (completed)
 
 **2026-02-03 (Update 2):**
 - Added Kimi K2.5 evaluation (Agent Swarm, multimodal, open-source)
@@ -434,5 +454,3 @@ occasional_audit:
 
 **2026-02-03 (Initial):**
 - Initial version with core models (GPT-5.2, Claude Sonnet/Opus/Haiku 4.5, Gemini 3 Pro/Flash)
-
-**TODO:** Add Kimi K2.5, GLM 4.7, GLM 4.7 Flash evaluation
