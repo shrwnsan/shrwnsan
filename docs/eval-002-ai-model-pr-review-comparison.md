@@ -110,6 +110,118 @@ Evaluation of AI models for automated pull request reviews to balance code quali
 
 ### Tier 3: Budget-Friendly Options
 
+#### Kimi K2.5 🆕
+
+**Factory Multiplier:** Not yet available (estimated 0.3-0.5×)
+**Pricing:** $0.60/$2.50 per 1M tokens (direct via Moonshot/OpenRouter)
+
+**Strengths:**
+- **Agent Swarm Architecture:** Coordinates up to 100 specialized agents simultaneously
+- **4.5× Faster Execution:** Parallel-Agent Reinforcement Learning (PARL)
+- **Open Source:** Model weights available for private deployment
+- **Multimodal:** Strong visual debugging capabilities (15T mixed tokens trained)
+- **Cost-Effective:** 76% cheaper than Claude Opus 4.5
+
+**Weaknesses:**
+- **Not on Factory Yet:** Requires external provider (OpenRouter, Fireworks AI)
+- **Swarm Costs:** Agent execution can multiply token usage unexpectedly
+- **Newer Model:** Less battle-tested in production workflows
+
+**Best For:**
+- Complex multi-file refactoring requiring parallel analysis
+- Visual-heavy codebases (UI debugging from screenshots)
+- Teams wanting open-source with optional private deployment
+- Organizations needing data residency compliance (Fireworks AI routing)
+
+**Pricing Note:**
+```
+Direct pricing: $0.60/$2.50 per 1M tokens
+With cache: $0.30/$1.25 per 1M tokens (50% savings)
+Estimated Factory cost: ~$0.08-$0.54 per 1M standard tokens (if added)
+```
+
+**When It Beats GPT-5.2:**
+- PRs requiring visual analysis (screenshots, designs)
+- Complex workflows benefiting from parallel agent execution
+- When open-source requirements or data residency are constraints
+
+---
+
+#### GLM 4.7 🆕
+
+**Factory Multiplier:** Not yet available (estimated 0.3-0.4×)
+**Pricing:** $0.40/$1.50 per 1M tokens (direct via Z.AI)
+
+**Strengths:**
+- **Strong SWE-Bench:** 73.8% (competitive with proprietary models)
+- **Tool Reliability:** 41% on Terminal Bench 2.0 (excellent for coding agents)
+- **End-to-End Fixes:** Focuses on complete solutions vs. explanations
+- **Multilingual:** 66.7% on SWE-bench Multilingual
+- **Stable Execution:** Clearer decision-making, fewer cascading errors
+
+**Weaknesses:**
+- **Not on Factory Yet:** Requires direct integration
+- **Smaller Context:** 131K-200K tokens (less than Gemini's 1M)
+- **Less Reasoning Depth:** Behind GPT-5.2 on complex logic tasks
+
+**Best For:**
+- Production coding agents requiring reliability
+- Teams focused on terminal-based workflows
+- Multilingual codebases
+- When cost matters more than maximum reasoning depth
+
+**Estimated Factory Cost:**
+```
+Direct: $0.40/$1.50 per 1M tokens
+Estimated Factory: ~$0.10-$0.40 per 1M standard tokens
+Savings vs GPT-5.2: ~80% cheaper (if available on Factory)
+```
+
+**When It Beats GPT-5.2:**
+- Coding agent workflows requiring stability
+- Terminal-heavy development tasks
+- Budget-constrained teams needing >70% SWE-bench performance
+
+---
+
+#### GLM 4.7 Flash 🆕
+
+**Factory Multiplier:** Not yet available (estimated 0.1-0.2×)
+**Pricing:** $0.07/$0.40 per 1M tokens (FREE API tier available)
+
+**Strengths:**
+- **Surprisingly Good:** 59.2% on SWE-bench Verified (beats Qwen3-30B's 22%)
+- **Ultra-Low Cost:** 20× cheaper than GPT-5.2 ($0.07 vs $1.75)
+- **Fast & Efficient:** 60-80+ tokens/second on local hardware
+- **Local Deployment:** Runs on 24GB GPUs or Mac M-series
+- **Free API Tier:** Unlimited access without credit card
+
+**Weaknesses:**
+- **Not on Factory Yet:** Requires direct integration
+- **Simpler Reasoning:** May struggle with complex architectural reviews
+- **Smaller Context:** 128K-200K tokens
+
+**Best For:**
+- High-volume PR triage
+- Teams with extreme budget constraints
+- Local/offline requirements (security/compliance)
+- Quick iteration on prototype code
+
+**Estimated Factory Cost:**
+```
+Direct: $0.07/$0.40 per 1M tokens (or FREE)
+Estimated Factory: ~$0.02-$0.08 per 1M standard tokens
+Savings vs GPT-5.2: ~95% cheaper
+```
+
+**When It Beats GPT-5.2:**
+- Ultra-high-volume PR workflows
+- When every dollar counts (bootstrapped teams)
+- Local/offline requirements
+- Initial triage before escalation to premium models
+
+---
+
 #### Claude Haiku 4.5
 
 **Factory Multiplier:** 0.4×
@@ -162,8 +274,13 @@ Evaluation of AI models for automated pull request reviews to balance code quali
 | Claude Sonnet 4.5 | 1.2× | $0.86 | $6.51 | 2.3× more expensive |
 | Claude Opus 4.5 | 2× | $1.35 | $6.75 | 2.7× more expensive |
 | Gemini 3 Pro | 0.8× | $0.57 | $3.40 | 1.1× more expensive |
+| Kimi K2.5* | ~0.4× (est.) | $0.08 | $0.54 | **6.25× cheaper** |
+| GLM 4.7* | ~0.3× (est.) | $0.10 | $0.40 | **5.0× cheaper** |
+| GLM 4.7 Flash* | ~0.15× (est.) | $0.02 | $0.08 | **25× cheaper** |
 | Claude Haiku 4.5 | 0.4× | $0.11 | $1.08 | **3.0× cheaper** |
 | Gemini 3 Flash | 0.2× | $0.05 | $0.27 | **7.0× cheaper** |
+
+*Not yet available on Factory - pricing shown is estimated based on direct API costs and projected Factory multiplier
 
 *Approximate costs via Factory based on typical cache ratios (4-8×)*
 
@@ -198,7 +315,42 @@ deep_dive:
   reason: Maximum accuracy when needed
 ```
 
-### For Budget-Conscious Teams
+### For Budget-Conscious Teams (Updated)
+```yaml
+all_reviews:
+  model: GLM 4.7 Flash  # NEW: 59.2% SWE-bench at $0.07/$0.40
+  reason: 95% cheaper than GPT-5.2, surprisingly capable
+  trigger: Non-critical PRs
+
+escalation:
+  model: GPT-5.2
+  trigger: Complex changes or security implications
+  reason: Maintain quality where it matters
+```
+
+### For Open Source / Local Deployment
+```yaml
+primary:
+  model: GLM 4.7 Flash  # Free API tier, runs on 24GB GPUs
+  deployment: Local or on-premises
+  reason: No vendor lock-in, data privacy
+
+alternative:
+  model: Kimi K2.5  # Open-source weights available
+  deployment: Private cloud
+  reason: Agent swarm for complex workflows
+```
+
+### For Visual-Heavy Codebases
+```yaml
+ui_pr_reviews:
+  model: Kimi K2.5  # Multimodal + visual debugging
+  reason: Analyze screenshots, designs, UI code
+
+backend_review:
+  model: GPT-5.2
+  reason: Superior reasoning for business logic
+```
 ```yaml
 all_reviews:
   model: GPT-5.2
@@ -212,12 +364,17 @@ occasional_audit:
 
 ## Benchmark Summary
 
-| Model | SWE-Bench | GPQA Diamond | AIME 2025 | Best Use Case |
-|-------|-----------|--------------|-----------|---------------|
-| Claude Opus 4.5 | **80.9%** | 37.6% | 83.3% | Coding accuracy |
-| **GPT-5.2** | 55.6% | **92.4%** | **100%** | **Reasoning + Security** |
-| Gemini 3 Pro | 77.4% | 31.1% | 70.0% | Large context |
-| Claude Sonnet 4.5 | 76.8% | N/A | N/A | General coding |
+| Model | SWE-Bench | SWE-Bench Multilingual | Terminal Bench | HLE* | Best Use Case |
+|-------|-----------|----------------------|----------------|------|---------------|
+| Claude Opus 4.5 | **80.9%** | N/A | 44% (best) | N/A | Coding accuracy |
+| GLM 4.7 | 73.8% | 66.7% | 41% | N/A | Reliable coding agent |
+| Gemini 3 Pro | 77.4% | N/A | N/A | N/A | Large context |
+| Claude Sonnet 4.5 | 76.8% | N/A | N/A | N/A | General coding |
+| GLM 4.7 Flash | 59.2% | N/A | N/A | N/A | Budget coding |
+| **GPT-5.2** | 55.6% | N/A | N/A | N/A | **Reasoning + Security** |
+| Kimi K2.5 | 50.2% (HLE) | N/A | N/A | **50.2%** | Multimodal + swarm |
+
+*HLE = Humanity's Last Exam (different from SWE-bench)
 
 ## Decision Matrix
 
@@ -226,17 +383,32 @@ occasional_audit:
 | **Automated PR Review** | GPT-5.2 | Claude Sonnet 4.5 | Best reasoning + cost balance |
 | **Security Audit** | GPT-5.2 | Claude Opus 4.5 | Superior threat detection |
 | **Large PRs** (>500K tokens) | Gemini 3 Pro | Claude Opus 4.5 | 1M context window |
-| **Budget Constraints** | Claude Haiku 4.5 | GPT-5.2 | 3× cheaper, surprisingly effective |
+| **Budget Constraints** | GLM 4.7 Flash* | Claude Haiku 4.5 | 95% cheaper, surprisingly good |
 | **High-Stakes Code** | Claude Opus 4.5 | GPT-5.2 | Highest accuracy, cost secondary |
-| **Style/Linting Only** | Gemini 3 Flash | Claude Haiku 4.5 | Ultra-low cost for simple tasks |
+| **Style/Linting Only** | GLM 4.7 Flash* | Gemini 3 Flash | Ultra-low cost, FREE tier available |
+| **Visual Debugging** | Kimi K2.5* | Claude Opus 4.5 | Multimodal + agent swarm |
+| **Production Coding Agent** | GLM 4.7* | GPT-5.2 | Reliable tool execution, cost-effective |
+| **Open Source Required** | GLM 4.7 Flash* | Kimi K2.5* | Local deployment, no vendor lock-in |
+
+*Not yet on Factory - requires external integration
 
 ## Future Models to Evaluate
 
-**To Be Added:**
-- [ ] Kimi K2.5 - Agent Swarm architecture, $0.60/$3 pricing
-- [ ] GLM 4.7 - $0.40/$1.50, strong coding capabilities
-- [ ] GLM 4.7 Flash - $0.07/$0.40, 59.2% SWE-bench
-- [ ] Additional Claude variants (Haiku thinking modes)
+**Recently Added (2026-02-03):**
+- [x] Kimi K2.5 - Agent Swarm, multimodal, $0.60/$2.50
+- [x] GLM 4.7 - 73.8% SWE-bench, reliable tool execution
+- [x] GLM 4.7 Flash - 59.2% SWE-bench, FREE tier, $0.07/$0.40
+
+**Future Candidates:**
+- [ ] DeepSeek V3 - Rumored strong coding model
+- [ ] Qwen 3 - Updated versions with improved coding
+- [ ] Claude Haiku 4.5 "Thinking" mode - Benchmark data emerging
+- [ ] Additional Factory Droid models as they're added
+
+**Monitoring:**
+- Factory Droid roadmap for new model additions
+- SWE-bench Verified leaderboard updates
+- Open-source model releases (especially from Chinese labs)
 
 ## References
 
@@ -245,9 +417,22 @@ occasional_audit:
 - [GPT-5.2 Benchmarks](https://www.vellum.ai/blog/gpt-5-2-benchmarks)
 - [Qodo AI: Haiku vs Sonnet PR Benchmark](https://www.qodo.ai/blog/thinking-vs-thinking-benchmarking-claude-haiku-4-5-a)
 - [Claude vs GPT vs Gemini Comparison](https://www.cosmicjs.com/blog/best-ai-for-developers-claude-vs-gpt-vs-gemini-)
+- [Kimi K2.5 Complete Guide](https://www.codecademy.com/article/kimi-k-2-5-complete-guide-to-moonshots-ai-model)
+- [GLM-4.7-Flash Ultimate Guide](https://medium.com/@zh.milo/glm-4-7-flash-the-ultimate-2026-guide-to-local-ai-coding-assistant)
+- [GLM 4.7 SWE-bench Analysis](https://www.linkedin.com/posts/ashishpatel2604_glm-47s-738-on-swe-bench-tells)
 
 ## Changelog
 
-**2026-02-03:** Initial version with core models (GPT-5.2, Claude Sonnet/Opus/Haiku 4.5, Gemini 3 Pro/Flash)
+**2026-02-03 (Update 2):**
+- Added Kimi K2.5 evaluation (Agent Swarm, multimodal, open-source)
+- Added GLM 4.7 evaluation (73.8% SWE-bench, reliable tool execution)
+- Added GLM 4.7 Flash evaluation (59.2% SWE-bench, FREE tier, 95% savings)
+- Updated cost comparison table with new models
+- Updated benchmark summary with SWE-bench Multilingual and Terminal Bench
+- Expanded decision matrix with 3 new use cases
+- Added new workflow examples for budget, open-source, and visual debugging scenarios
+
+**2026-02-03 (Initial):**
+- Initial version with core models (GPT-5.2, Claude Sonnet/Opus/Haiku 4.5, Gemini 3 Pro/Flash)
 
 **TODO:** Add Kimi K2.5, GLM 4.7, GLM 4.7 Flash evaluation
