@@ -10,11 +10,11 @@
 
 **Researching:**
 <!--START_SECTION:research-->
+* [The Simplification Paradox: Removing AI Complexity Improved Our Editorial Output](https://shrwnsan.github.io/research/the-simplification-paradox/) - 2026-07-21
 * [From Pseudocode to Pipeline: Implementing Tiered Model Selection in a Real GitHub Actions Workflow](https://shrwnsan.github.io/research/tiered-model-selection-in-practice/) - 2026-03-17
 * [The Hidden Layer: How Foundation Model Choice Makes or Breaks AI Testing Tools](https://shrwnsan.github.io/research/foundation-model-selection-ai-testing/) - 2026-02-04
 * [The Death of Maintenance: How AI Is Rewriting Regression Testing in 2026](https://shrwnsan.github.io/research/regression-testing-ai-sdlc/) - 2026-01-29
 * [Agent Skills as an Infrastructure Primitive](https://shrwnsan.github.io/research/agent-skills-infrastructure-primitive/) - 2025-12-26
-* [From Cockpit to Conversation: How Smart Model Selection is the Future of AI Tools](https://shrwnsan.github.io/research/smart-model-selection-future-ai-tools/) - 2025-11-16
 <!--END_SECTION:research-->
 
 ---
