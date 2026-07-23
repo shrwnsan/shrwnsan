@@ -15,6 +15,7 @@
 * [The Hidden Layer: How Foundation Model Choice Makes or Breaks AI Testing Tools](https://shrwnsan.github.io/research/foundation-model-selection-ai-testing/) - 2026-02-04
 * [The Death of Maintenance: How AI Is Rewriting Regression Testing in 2026](https://shrwnsan.github.io/research/regression-testing-ai-sdlc/) - 2026-01-29
 * [Agent Skills as an Infrastructure Primitive](https://shrwnsan.github.io/research/agent-skills-infrastructure-primitive/) - 2025-12-26
+* [See all research →](https://shrwnsan.github.io/research/)
 <!--END_SECTION:research-->
 
 ---
