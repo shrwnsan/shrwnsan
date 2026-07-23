@@ -43,6 +43,7 @@ def format_research_posts(posts):
         else:
             formatted.append(f"* [{title}]({url})")
 
+    formatted.append("* [See all research →](https://shrwnsan.github.io/research/)")
     return "\n".join(formatted)
 
 def replace_section(content, section_name, new_content):
