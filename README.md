@@ -10,11 +10,11 @@
 
 **Researching:**
 <!--START_SECTION:research-->
+* [Mechanical Gates Before Human Reads: Benchmarking 8 Free LLM Endpoints for a Production Translation Job](https://shrwnsan.github.io/research/free-models-mechanical-gate/) - 2026-08-17
+* [The Quality Gate That Killed Itself: Why We Audit Our LLM Pipeline After It Ships](https://shrwnsan.github.io/research/auditing-llm-output-after-the-ship/) - 2026-08-11
+* [Does the AI Beat Free?: What 44 Days of LLM-vs-Sort A/B Actually Showed](https://shrwnsan.github.io/research/does-the-ai-beat-free/) - 2026-07-29
 * [When Compression Makes Your Context Bigger: How an Agent Pipeline Fails Silently](https://shrwnsan.github.io/research/when-compression-makes-your-context-bigger/) - 2026-07-26
 * [Evaluating the Unevaluable: A Method for Scoring Subjective AI Output](https://shrwnsan.github.io/research/evaluating-the-unevaluable/) - 2026-07-23
-* [The Simplification Paradox: Removing AI Complexity Improved Our Editorial Output](https://shrwnsan.github.io/research/the-simplification-paradox/) - 2026-07-21
-* [From Pseudocode to Pipeline: Implementing Tiered Model Selection in a Real GitHub Actions Workflow](https://shrwnsan.github.io/research/tiered-model-selection-in-practice/) - 2026-03-17
-* [The Hidden Layer: How Foundation Model Choice Makes or Breaks AI Testing Tools](https://shrwnsan.github.io/research/foundation-model-selection-ai-testing/) - 2026-02-04
 * [See all research →](https://shrwnsan.github.io/research/)
 <!--END_SECTION:research-->
 
