@@ -10,11 +10,11 @@
 
 **Researching:**
 <!--START_SECTION:research-->
+* [Where System One Beats and Breaks: Benchmarking a Decision Model Against LLM Scorers on Real Ground Truth](https://shrwnsan.github.io/research/where-system-one-beats-and-breaks/) - 2026-10-02
+* [Don’t Ask Jev What Your Tools Can Prove: A TypeSafe AI Field Report](https://shrwnsan.github.io/research/dont-ask-jev-what-your-tools-can-prove/) - 2026-09-21
 * [Mechanical Gates Before Human Reads: Benchmarking 8 Free LLM Endpoints for a Production Translation Job](https://shrwnsan.github.io/research/free-models-mechanical-gate/) - 2026-08-17
 * [The Quality Gate That Killed Itself: Why We Audit Our LLM Pipeline After It Ships](https://shrwnsan.github.io/research/auditing-llm-output-after-the-ship/) - 2026-08-11
 * [Does the AI Beat Free?: What 44 Days of LLM-vs-Sort A/B Actually Showed](https://shrwnsan.github.io/research/does-the-ai-beat-free/) - 2026-07-29
-* [When Compression Makes Your Context Bigger: How an Agent Pipeline Fails Silently](https://shrwnsan.github.io/research/when-compression-makes-your-context-bigger/) - 2026-07-26
-* [Evaluating the Unevaluable: A Method for Scoring Subjective AI Output](https://shrwnsan.github.io/research/evaluating-the-unevaluable/) - 2026-07-23
 * [See all research →](https://shrwnsan.github.io/research/)
 <!--END_SECTION:research-->
 
